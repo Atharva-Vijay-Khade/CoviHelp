@@ -1,19 +1,65 @@
 # CoviHelp
-CoviHelp is an android application made using java, it's an aim to help the people suffering from COVID-19 and the adverse effects of the pandemic
 
-Due to Covid-19 pandemic a lot of people are suffering
-many lost their jobs due to economic crisis
-many people are not getting hospitals for treatment due to shortage of facilities
-many are not getting medicines for treatment of Covid
-labourers working on many different areas had to leave their work
-some were left unemployed leading to many sufferings
-people are not getting oxygen cylinders
-and thus required help to fight with COVID is not availabe
-and conditions of the people are getting worsen day by day
-                    
-But if people around such suffering people or the suffering people themselves get a chance to seek help
-from the other people around the nation, then this problem can be solved.
-                   
-Thus, CoviHelp App will allow the needy people to request for help around the nation
-and people wanting to help and cure their suffering can help them using this App,
-This App will serve to help the people suffering from the pandemic situation and help needy people
+CoviHelp is an Android Application made using Java, it's aim is to help people who are suffering from COVID-19 
+and the adverse effects of the pandemic.
+
+## Description
+
+![Data Base@1 25x](https://user-images.githubusercontent.com/58695354/120900885-17dfe100-c655-11eb-8535-b0253007cd0e.png)
+
+
+
+## Getting Started
+
+### Dependencies
+
+* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
+* ex. Windows 10
+
+### Installing
+
+* How/where to download your program
+* Any modifications needed to be made to files/folders
+
+### Executing program
+
+* How to run the program
+* Step-by-step bullets
+```
+code blocks for commands
+```
+
+## Help
+
+Any advise for common problems or issues.
+```
+command to run if program contains helper info
+```
+
+## Authors
+
+Contributors names and contact info
+
+ex. Dominique Pizzie  
+ex. [@DomPizzie](https://twitter.com/dompizzie)
+
+## Version History
+
+* 0.2
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+* 0.1
+    * Initial Release
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* [dbader](https://github.com/dbader/readme-template)
+* [zenorocha](https://gist.github.com/zenorocha/4526327)
+* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
