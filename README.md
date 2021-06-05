@@ -22,15 +22,15 @@ Working Flow and App Features
 
 		          2] Help to Cure COVID 
              
-              3] Help to get labour or job request
+	    		  3] Help to get labour or job request
 		
 		          4] Any other help information required by the users or by other people known by the user can be added 
 		             by using this feature of the app, to help them.
             
             
             -> Feature 2: Help the needy
-		
-		        If the user wants to help someone, the user can select this feature
+	    
+	          If the user wants to help someone, the user can select this feature
 		
               -> By using this feature the user will be asked for district where the user wants to help
               -> then locations with help discription will be shown corrosponding to the district where help is required 
