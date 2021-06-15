@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.circularreveal.CircularRevealRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/background_color">
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp">
+
+        <Button
+            android:id="@+id/AddHelpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="100dp"
+            android:backgroundTint="@color/white"
+            android:text="Add Help Info"
+            android:textColor="@color/teal_700"
+
+            />
+
+        <Button
+            android:id="@+id/HelpAnyOneButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/AddHelpButton"
+            android:backgroundTint="@color/white"
+            android:text="Help the needy"
+            android:textColor="@color/teal_700" />
+    </RelativeLayout>
+
+</com.google.android.material.circularreveal.CircularRevealRelativeLayout>
