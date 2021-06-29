@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginsignup_background_color"
+    android:padding="30dp"
+    tools:context=".Login">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="246dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/helplogo"
+        android:id="@+id/logo_Login"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/teal_200"
+        app:cardCornerRadius="40sp"
+        android:id="@+id/login_email"
+        android:layout_below="@id/logo_Login"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/login_email_container">
+
+            <ImageView
+                android:id="@+id/email_logoLogin"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                app:srcCompat="@android:drawable/sym_action_email"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                />
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_toRightOf="@+id/email_logoLogin"
+                android:layout_marginLeft="10dp"
+                android:hint="email address"
+                android:textColor="@color/white"
+                android:id="@+id/emailLogin"
+                />
+
+        </RelativeLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        app:cardBackgroundColor="@color/teal_200"
+        app:cardCornerRadius="40sp"
+        android:id="@+id/login_password"
+        android:layout_below="@+id/login_email"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/login_password_container">
+
+            <ImageView
+                android:id="@+id/password_logoLogin"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                app:srcCompat="@android:drawable/ic_lock_idle_lock"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_toRightOf="@+id/password_logoLogin"
+                android:layout_marginLeft="10dp"
+                android:hint="password"
+                android:textColor="@color/white"
+                android:id="@+id/passwordLogin"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/white"
+        android:text="login"
+        android:textColor="@color/teal_200"
+        android:id="@+id/login_button"
+        />
+
+
+</RelativeLayout>
