@@ -1,23 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.circularreveal.CircularRevealRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HelpTheNeedy"
-    android:background="@drawable/background_color">
+    android:background="@drawable/background_color"
+    android:padding="20dp">
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter Datat 2"
-            android:textSize="50sp"
-            android:layout_centerInParent="true"
-            android:textColor="@color/white"
-            />
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        app:cardElevation="50dp"
+        app:cardCornerRadius="20sp"
+        app:cardBackgroundColor="@color/teal_700"
+        android:id="@+id/district_card"
+        android:padding="20dp"
+        >
 
-</com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@android:drawable/ic_menu_search"
+            android:id="@+id/search_glass"
+            android:outlineSpotShadowColor="@color/white"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/district_text"
+            android:layout_marginLeft="50dp"
+            android:inputType="text"
+            android:hint="enter district where you want to help"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white"
+            android:textCursorDrawable="@color/black"
+            android:textColor="@color/white"
+        />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/district_card"
+        android:id="@+id/search_district"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/white"
+        android:text="search"
+        android:textColor="@color/teal_700"
+        />
+
+    <ListView
+
+        android:id="@+id/district_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_district"
+        android:layout_marginTop="40dp"
+
+        />
+
+
+</RelativeLayout>

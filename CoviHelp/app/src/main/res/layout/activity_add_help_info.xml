@@ -19,24 +19,28 @@
             android:layout_height="wrap_content"
             android:id="@+id/helpInfoTextCard"
             app:cardBackgroundColor="@color/teal_200"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="50dp"
             >
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/teal_700">
+                app:cardBackgroundColor="@color/teal_700"
+                app:cardElevation="50dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:text="Please provide the help description"
+                    android:text="Help description"
                     android:textSize="20sp"
                     android:layout_alignParentLeft="true"
                     android:textColor="@color/black"
                     android:id="@+id/helpDescription"
+                    android:letterSpacing="0.1"
                     />
 
             </androidx.cardview.widget.CardView>
@@ -49,8 +53,11 @@
                 android:layout_below="@+id/helpDescription"
                 android:layout_marginTop="70dp"
                 android:textColor="@color/white"
-                android:hint="Enter here"
+                android:hint="help description"
                 android:textColorHint="@color/white"
+                android:textCursorDrawable="@color/black"
+                app:backgroundTint="@color/black"
+                android:letterSpacing="0.1"
                 />
 
         </androidx.cardview.widget.CardView>
@@ -62,23 +69,27 @@
             android:layout_below="@+id/helpInfoTextCard"
             android:layout_marginTop="40dp"
             app:cardBackgroundColor="@color/teal_200"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="50dp"
             >
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/teal_700">
+                app:cardBackgroundColor="@color/teal_700"
+                app:cardElevation="50dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Complete address where help is required"
+                    android:text="Address of help location"
                     android:textSize="20sp"
                     android:layout_alignParentLeft="true"
                     android:padding="5dp"
                     android:textColor="@color/black"
                     android:id="@+id/address"
+                    android:letterSpacing="0.1"
                     />
 
             </androidx.cardview.widget.CardView>
@@ -90,8 +101,11 @@
                 android:layout_below="@+id/address"
                 android:layout_marginTop="70dp"
                 android:textColor="@color/white"
-                android:hint="Enter here "
+                android:hint="address"
                 android:textColorHint="@color/white"
+                android:textCursorDrawable="@color/black"
+                app:backgroundTint="@color/black"
+                android:letterSpacing="0.1"
                 />
 
         </androidx.cardview.widget.CardView>
@@ -103,22 +117,26 @@
             android:id="@+id/districtCard"
             android:layout_below="@+id/addressTextCard"
             android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/teal_200">
+            app:cardBackgroundColor="@color/teal_200"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="50dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="@color/teal_700">
+            app:cardBackgroundColor="@color/teal_700"
+            app:cardElevation="50dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Please Provide the District where help is required"
+                android:text="District where help is required"
                 android:textSize="20sp"
                 android:layout_alignParentLeft="true"
                 android:textColor="@color/black"
                 android:id="@+id/district"
                 android:padding="5dp"
+                android:letterSpacing="0.1"
                 />
 
         </androidx.cardview.widget.CardView>
@@ -129,8 +147,11 @@
                 android:layout_below="@+id/district"
                 android:layout_marginTop="70dp"
                 android:textColor="@color/white"
-                android:hint="Enter here"
+                android:hint="district"
                 android:textColorHint="@color/white"
+                android:textCursorDrawable="@color/black"
+                app:backgroundTint="@color/black"
+                android:letterSpacing="0.1"
                 />
 
         </androidx.cardview.widget.CardView>
@@ -141,23 +162,27 @@
             android:id="@+id/emailCard"
             android:layout_below="@id/districtCard"
             android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/teal_200">
+            app:cardBackgroundColor="@color/teal_200"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="50dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="@color/teal_700">
+            app:cardBackgroundColor="@color/teal_700"
+            app:cardElevation="50dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Please provide an email address to contact for help"
+                android:text="Email address to help"
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:layout_alignParentLeft="true"
                 android:textColor="@color/black"
                 android:id="@+id/emailID"
+                android:letterSpacing="0.1"
                 />
 
             </androidx.cardview.widget.CardView>
@@ -169,8 +194,12 @@
                 android:layout_below="@+id/emailID"
                 android:layout_marginTop="70dp"
                 android:textColor="@color/white"
-                android:hint="Enter here"
+                android:hint="email"
                 android:textColorHint="@color/white"
+                android:textCursorDrawable="@color/black"
+                app:backgroundTint="@color/black"
+                android:letterSpacing="0.1"
+                android:inputType="textEmailAddress"
                 />
 
         </androidx.cardview.widget.CardView>
@@ -182,22 +211,26 @@
             android:id="@+id/contactNumberTextCard"
             app:cardBackgroundColor="@color/teal_200"
             android:layout_marginTop="40dp"
-            android:layout_below="@+id/emailCard">
+            android:layout_below="@+id/emailCard"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="50dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/teal_700">
+                app:cardBackgroundColor="@color/teal_700"
+                app:cardElevation="50dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Please provide a contact number to contact for help"
+                android:text="Contact number to help"
                 android:padding="5dp"
                 android:textSize="20sp"
                 android:layout_alignParentLeft="true"
                 android:textColor="@color/black"
                 android:id="@+id/contactNumber"
+                android:letterSpacing="0.1"
                 />
 
         </androidx.cardview.widget.CardView>
@@ -208,8 +241,12 @@
                 android:layout_below="@+id/contactNumber"
                 android:layout_marginTop="70dp"
                 android:textColor="@color/white"
-                android:hint="Enter here"
+                android:hint="contact"
                 android:textColorHint="@color/white"
+                android:textCursorDrawable="@color/black"
+                app:backgroundTint="@color/black"
+                android:letterSpacing="0.1"
+                android:inputType="number"
                 />
 
         </androidx.cardview.widget.CardView>

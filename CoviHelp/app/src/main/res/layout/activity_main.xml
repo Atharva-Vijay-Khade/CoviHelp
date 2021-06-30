@@ -7,33 +7,118 @@
     tools:context=".MainActivity"
     android:background="@drawable/background_color">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <RelativeLayout
         android:id="@+id/RelativeLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="40dp">
 
-        <Button
-            android:id="@+id/AddHelpButton"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            app:cardCornerRadius="30dp"
+            android:layout_marginTop="20dp"
+            android:elevation="50dp"
+            android:id="@+id/welcome">
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:padding="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcom to CoviHelp"
+                android:letterSpacing="0.1"
+                android:textSize="25sp"
+                android:textColor="@color/teal_700"/>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:cardElevation="50dp"
+            app:cardCornerRadius="20dp"
+            android:id="@+id/add_help_card"
+            android:layout_marginTop="180dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="200dp"
-            android:layout_marginBottom="100dp"
-            android:backgroundTint="@color/white"
-            android:text="Add Help Info"
-            android:textColor="@color/teal_700"
+            >
 
-            />
+            <Button
+                android:id="@+id/AddHelpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:backgroundTint="@color/white"
+                android:text="Add Help Info  "
+                android:textColor="@color/teal_700"
+                android:letterSpacing="0.2"
+                />
 
-        <Button
-            android:id="@+id/HelpAnyOneButton"
+        </androidx.cardview.widget.CardView>
+
+
+
+        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/AddHelpButton"
-            android:backgroundTint="@color/white"
-            android:text="Help the needy"
-            android:textColor="@color/teal_700" />
+            app:cardCornerRadius="20dp"
+            app:cardElevation="50dp"
+            android:id="@+id/help_needy_card"
+            android:layout_marginTop="350dp"
+            android:layout_alignParentRight="true"
+            >
+
+            <Button
+                android:id="@+id/HelpAnyOneButton"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:backgroundTint="@color/white"
+                android:text="Help the needy"
+                android:letterSpacing="0.2"
+                android:textColor="@color/teal_700"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logout_card"
+            android:layout_below="@+id/help_needy_card"
+            app:cardElevation="50dp"
+            android:layout_marginTop="150dp"
+            app:cardCornerRadius="30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thanks for helping : )"
+                android:textSize="20sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/teal_700"/>
+
+            <ImageView
+                android:padding="10dp"
+                android:id="@+id/logout"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="250dp"
+                app:srcCompat="@android:drawable/ic_lock_power_off"
+                android:layout_below="@+id/help_needy_card"
+                android:layout_alignParentRight="true"
+               />
+
+        </androidx.cardview.widget.CardView>
+
+
     </RelativeLayout>
+
+    </ScrollView>
 
 </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
