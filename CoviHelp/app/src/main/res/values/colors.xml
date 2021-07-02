@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="loginregister">#c2046f</color>
     <color name="color_app_bar">#070f59</color>
+    <color name="transparent_white">#33FFFFFF</color>
+    <color name="Card_color">#2203DAC5</color>
 </resources>

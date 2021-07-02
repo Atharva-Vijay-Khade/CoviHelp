@@ -1,18 +1,16 @@
 package com.example.covihelp;
 
+// import statements
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 public class LoginSignUp extends AppCompatActivity {
 
+    // register and login field objects
     private CardView register;
     private CardView login;
 
@@ -21,9 +19,11 @@ public class LoginSignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_sign_up);
 
+        // linking the objects with there views in UI/xml
         register = findViewById(R.id.registerCard);
         login = findViewById(R.id.loginCard);
 
+        // setting up action that happens when user clicks on the register card
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,6 +34,7 @@ public class LoginSignUp extends AppCompatActivity {
             }
         });
 
+        // setting up action that happens when user clicks on the login card
         login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -45,6 +46,5 @@ public class LoginSignUp extends AppCompatActivity {
         });
 
     }
-
 
 }

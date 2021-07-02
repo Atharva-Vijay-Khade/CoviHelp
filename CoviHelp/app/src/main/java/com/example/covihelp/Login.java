@@ -1,4 +1,4 @@
-package com.example.covihelp;
+package com.example.covihelp;          // com.example.app_name also serves as an APP ID for playstore reference for future version updates
 
 // import statements
 import androidx.annotation.NonNull;
@@ -29,12 +29,14 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        // whenever this activity/screen will start then
+        // this onCreate(); function is started
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
         // here we are getting the current instance of the firebase data base
         // so that we can perform tasks on the database
         mAuth = FirebaseAuth.getInstance();
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
 
         email = findViewById(R.id.emailLogin);
         password = findViewById(R.id.passwordLogin);
@@ -43,28 +45,39 @@ public class Login extends AppCompatActivity {
         progress_login.setVisibility(View.GONE);
 
 
+        // setting up login button action
         login_button.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
+                // string fields for edit texts
                 String email_string = email.getText().toString().trim();
                 String password_string = password.getText().toString().trim();
 
                 // checking if any field is empty
                 if(email_string.isEmpty()) {
+
                     email.setError("Email is required");
                     email.requestFocus();
                     return;
+
                 }
+
                 if(password_string.isEmpty()) {
+
                     password.setError("Password is required");
                     password.requestFocus();
                     return;
+
                 }
 
                 // in firebase the length of password should be not less than 6
                 if(password_string.length()<6) {
+
                     password.setError("Password length should be at least 6 characters");
+                    return;
+
                 }
 
                 // now verifying the user
@@ -72,16 +85,21 @@ public class Login extends AppCompatActivity {
 
                 // authenticating the user
                 mAuth.signInWithEmailAndPassword(email_string,password_string).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         // successful login of user
                         if(task.isSuccessful()) {
+
                             Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(Login.this,MainActivity.class));
+
                         }
                         else {
-                            Toast.makeText(Login.this, "Error: "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+
+                            Toast.makeText(Login.this, "Error: "+task.getException().getMessage(), Toast.LENGTH_LONG).show();
+
                         }
 
                         progress_login.setVisibility(View.GONE);

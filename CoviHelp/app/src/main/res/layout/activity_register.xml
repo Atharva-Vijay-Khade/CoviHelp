@@ -105,13 +105,15 @@
     />
 
     <ProgressBar
+        android:id="@+id/register_progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/register_progress_bar"
         android:layout_below="@+id/register_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:visibility="invisible"
-    />
+        android:layout_alignEnd="@+id/logo_Register"
+        android:layout_alignRight="@+id/logo_Register"
+        android:layout_marginTop="-444dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginRight="142dp"
+        android:visibility="invisible" />
 
 </RelativeLayout>

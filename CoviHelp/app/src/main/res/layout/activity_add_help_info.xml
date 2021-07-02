@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/helpInfoTextCard"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/Card_color"
             app:cardCornerRadius="20dp"
             app:cardElevation="50dp"
             >
@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/teal_700"
+                app:cardBackgroundColor="@color/teal_200"
                 app:cardElevation="50dp">
 
                 <TextView
@@ -68,7 +68,7 @@
             android:id="@+id/addressTextCard"
             android:layout_below="@+id/helpInfoTextCard"
             android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/Card_color"
             app:cardCornerRadius="20dp"
             app:cardElevation="50dp"
             >
@@ -77,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/teal_700"
+                app:cardBackgroundColor="@color/teal_200"
                 app:cardElevation="50dp">
 
                 <TextView
@@ -110,14 +110,68 @@
 
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/StateCard"
+            android:layout_below="@+id/addressTextCard"
+            android:layout_marginTop="40dp"
+            app:cardBackgroundColor="@color/Card_color"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="50dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/teal_200"
+                app:cardElevation="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State where help is required"
+                    android:textSize="20sp"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/black"
+                    android:id="@+id/state"
+                    android:padding="5dp"
+                    android:letterSpacing="0.1"
+                    />
+
+            </androidx.cardview.widget.CardView>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:popupBackground="@color/transparent_white"
+                android:id="@+id/add_help_stateSpinner"
+                />
+
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/state_text_entry"-->
+<!--                android:layout_below="@+id/district"-->
+<!--                android:layout_marginTop="70dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:hint="state"-->
+<!--                android:textColorHint="@color/white"-->
+<!--                android:textCursorDrawable="@color/black"-->
+<!--                app:backgroundTint="@color/black"-->
+<!--                android:letterSpacing="0.1"-->
+<!--                />-->
+
+        </androidx.cardview.widget.CardView>
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/districtCard"
-            android:layout_below="@+id/addressTextCard"
+            android:layout_below="@+id/StateCard"
             android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/Card_color"
             app:cardCornerRadius="20dp"
             app:cardElevation="50dp">
 
@@ -125,12 +179,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="@color/teal_700"
+            app:cardBackgroundColor="@color/teal_200"
             app:cardElevation="50dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="District where help is required"
+                android:text="District in selected state"
                 android:textSize="20sp"
                 android:layout_alignParentLeft="true"
                 android:textColor="@color/black"
@@ -140,19 +194,27 @@
                 />
 
         </androidx.cardview.widget.CardView>
-            <EditText
+
+            <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/districtText"
-                android:layout_below="@+id/district"
                 android:layout_marginTop="70dp"
-                android:textColor="@color/white"
-                android:hint="district"
-                android:textColorHint="@color/white"
-                android:textCursorDrawable="@color/black"
-                app:backgroundTint="@color/black"
-                android:letterSpacing="0.1"
+                android:popupBackground="@color/transparent_white"
+                android:id="@+id/add_help_districtSpinner"
                 />
+<!--            <EditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/districtText"-->
+<!--                android:layout_below="@+id/district"-->
+<!--                android:layout_marginTop="70dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:hint="district"-->
+<!--                android:textColorHint="@color/white"-->
+<!--                android:textCursorDrawable="@color/black"-->
+<!--                app:backgroundTint="@color/black"-->
+<!--                android:letterSpacing="0.1"-->
+<!--                />-->
 
         </androidx.cardview.widget.CardView>
 
@@ -162,7 +224,7 @@
             android:id="@+id/emailCard"
             android:layout_below="@id/districtCard"
             android:layout_marginTop="40dp"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/Card_color"
             app:cardCornerRadius="20dp"
             app:cardElevation="50dp">
 
@@ -170,7 +232,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="@color/teal_700"
+            app:cardBackgroundColor="@color/teal_200"
             app:cardElevation="50dp">
 
             <TextView
@@ -209,7 +271,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/contactNumberTextCard"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/Card_color"
             android:layout_marginTop="40dp"
             android:layout_below="@+id/emailCard"
             app:cardCornerRadius="20dp"
@@ -219,7 +281,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="20dp"
-                app:cardBackgroundColor="@color/teal_700"
+                app:cardBackgroundColor="@color/teal_200"
                 app:cardElevation="50dp">
             <TextView
                 android:layout_width="wrap_content"
