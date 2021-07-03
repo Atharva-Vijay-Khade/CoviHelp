@@ -16,7 +16,7 @@
             android:id="@+id/state_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:popupBackground="@color/transparent_white"
+            android:popupBackground="@color/help_spinner_background"
             android:backgroundTint="@color/transparent_white"
 
             />
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/state_spinner"
-            android:popupBackground="@color/transparent_white"
+            android:popupBackground="@color/help_spinner_background"
             android:backgroundTint="@color/transparent_white"
             />
 

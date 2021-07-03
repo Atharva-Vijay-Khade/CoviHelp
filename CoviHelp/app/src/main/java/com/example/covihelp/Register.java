@@ -95,7 +95,10 @@ public class Register extends AppCompatActivity {
                 if(mAuth.getCurrentUser()!=null) {
 
                     // directly send to main activity
-                    Toast.makeText(Register.this, "Account already exists, redirecting to login", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this, "It looks like your account already exist," +
+                            "if not there might be a network issue, " +
+                            "please checkout logging in," +
+                            " if your account already exist", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(Register.this,Login.class));
                     register_progress_bar.setVisibility(View.GONE);
                     finish();   // this finish quits any ongoing work that was the activity was doing

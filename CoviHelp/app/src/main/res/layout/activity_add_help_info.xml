@@ -146,7 +146,7 @@
                 android:layout_marginTop="70dp"
                 android:backgroundTint="@color/white"
                 android:id="@+id/add_help_stateSpinner"
-                android:popupBackground="@drawable/loginsignup_background_color"
+                android:popupBackground="@color/help_spinner_background"
                 />
 
 <!--            <EditText-->
@@ -202,7 +202,7 @@
                 android:layout_marginTop="70dp"
                 android:id="@+id/add_help_districtSpinner"
                 android:backgroundTint="@color/white"
-                android:popupBackground="@drawable/loginsignup_background_color"
+                android:popupBackground="@color/help_spinner_background"
                 />
 <!--            <EditText-->
 <!--                android:layout_width="match_parent"-->

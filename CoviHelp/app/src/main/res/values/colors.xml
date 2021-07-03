@@ -11,4 +11,7 @@
     <color name="color_app_bar">#070f59</color>
     <color name="transparent_white">#33FFFFFF</color>
     <color name="Card_color">#2203DAC5</color>
+    <color name="add_help_spinner_background">#88000C7C</color>
+    <color name="black_transparent">#77000000</color>
+    <color name="help_spinner_background">#77000000</color>
 </resources>
