@@ -1,12 +1,30 @@
 package com.example.covihelp;                          // com.example.app_name gives unique id to our application when it's on playstore
 
 // import statements
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 // class implementation
 public class HelpTheNeedy extends AppCompatActivity {
@@ -19,6 +37,12 @@ public class HelpTheNeedy extends AppCompatActivity {
     // data source to the UI component
     private ArrayAdapter state_adapter,district_adapter;
 
+    // search button and list view and progress bar fields
+    private Button search;
+    private ListView listView;
+    private ProgressBar progressBar;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -28,13 +52,17 @@ public class HelpTheNeedy extends AppCompatActivity {
 
         // binding the spinner object with the UI xml component
         state_spinner = findViewById(R.id.state_spinner);
-
+        // binding the search button and the list view with their UI component
+        search = findViewById(R.id.search);
+        listView = findViewById(R.id.show_data_list);
+        progressBar = findViewById(R.id.search_progress);
 
         // now initializing the arrayAdapter for the state
         state_adapter = state_adapter.createFromResource(this,R.array.array_indian_states,R.layout.state_spinner_layout);
 
         // now specifying the layout of the list when it appears
-        state_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        state_adapter.setDropDownViewResource(android.R.layout.simple_selectable_list_item
+        );
 
         // now populating the data from the adapter to the spinner
         state_spinner.setAdapter(state_adapter);
@@ -185,6 +213,106 @@ public class HelpTheNeedy extends AppCompatActivity {
 
         });
 
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                progressBar.setVisibility(View.VISIBLE);
+                ArrayList<CoviHelpData> coviHelpData = new ArrayList<>();
+
+                String state_string;
+                String district_string;
+
+                state_string = state_spinner.getSelectedItem().toString();
+                district_string = district_spinner.getSelectedItem().toString();
+
+                // check for error condition
+                if(state_string.equals("Select Your State")) {
+                    Toast.makeText(HelpTheNeedy.this, "Please select the state", Toast.LENGTH_SHORT).show();
+                    state_spinner.requestFocus();
+                    progressBar.setVisibility(View.GONE);
+                    return;
+                }
+                if(district_string.equals("Select Your District")) {
+                    Toast.makeText(HelpTheNeedy.this, "Please select the district", Toast.LENGTH_SHORT).show();
+                    district_spinner.requestFocus();
+                    progressBar.setVisibility(View.GONE);
+                    return;
+                }
+
+                // implementing custom adapter
+                class MyAdapter extends BaseAdapter {
+
+                    @Override
+                    public int getCount() {
+                        // getting count from information in data base
+                        return coviHelpData.size();
+                    }
+
+                    @Override
+                    public Object getItem(int i) {
+                        return null;
+                    }
+
+                    @Override
+                    public long getItemId(int i) {
+                        return 0;
+                    }
+
+                    @Override
+                    public View getView(int position, View view, ViewGroup viewGroup) {
+
+                        view = getLayoutInflater().inflate(R.layout.help_the_needy_data_list_item,viewGroup,false);
+
+                        TextView helpDescription = view.findViewById(R.id.help_description);
+                        TextView address = view.findViewById(R.id.address_);
+                        TextView email = view.findViewById(R.id.email_);
+                        TextView mobileNumber = view.findViewById(R.id.mobileNumber);
+
+                        helpDescription.setText(coviHelpData.get(position).getHelpDescription().toString());
+                        address.setText(coviHelpData.get(position).getAddress().toString());
+                        email.setText(coviHelpData.get(position).getEmail().toString());
+                        mobileNumber.setText(coviHelpData.get(position).getContact().toString());
+
+                        return view;
+                    }
+
+                }
+
+                MyAdapter adapter = new MyAdapter();
+                listView.setAdapter(adapter);
+
+                // now we are getting the data fom the data base
+                DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("CoviHelp").child(state_string).child(district_string);
+
+
+                reference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        coviHelpData.clear();
+                        for(DataSnapshot snapshot1 : snapshot.getChildren()) {
+                                CoviHelpData data = new CoviHelpData();
+                                data = snapshot1.getValue(CoviHelpData.class);
+                                coviHelpData.add(data);
+                        }
+                        if(coviHelpData.size()==0) {
+                            Toast.makeText(HelpTheNeedy.this, "No Data Available for this location : (", Toast.LENGTH_SHORT).show();
+                        }
+                        adapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.INVISIBLE);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                        Toast.makeText(HelpTheNeedy.this, "No Data Available : (", Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.INVISIBLE);
+                    }
+                });
+
+
+
+            }
+        });
     }
 }

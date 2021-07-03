@@ -6,97 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".HelpTheNeedy"
     android:background="@drawable/background_color"
-    android:padding="20dp">
+    android:paddingTop="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="20dp">
 
+        <Spinner
+            android:layout_marginTop="5dp"
+            android:id="@+id/state_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:popupBackground="@color/transparent_white"
+            android:backgroundTint="@color/transparent_white"
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        app:cardElevation="50dp"
-        app:cardCornerRadius="25sp"
-        app:cardBackgroundColor="@color/teal_700"
-        android:id="@+id/state_search_card"
-        android:padding="20dp"
-        >
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            app:srcCompat="@android:drawable/ic_menu_search"
-            android:id="@+id/search_glass_state"
-            android:outlineSpotShadowColor="@color/white"
             />
 
-        <TextView
-            android:id="@+id/state_text"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/district_spinner"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="State"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
-
-
-    <Spinner
-        android:id="@+id/state_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/state_search_card"
-        android:layout_marginTop="52dp"
-        android:popupBackground="@color/transparent_white"
-        android:backgroundTint="@color/transparent_white"
-        />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        app:cardElevation="50dp"
-        app:cardCornerRadius="25sp"
-        app:cardBackgroundColor="@color/teal_700"
-        android:id="@+id/district_search_card"
-        android:padding="20dp"
-        android:layout_below="@+id/state_search_card"
-        android:layout_marginTop="150dp"
-        >
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            app:srcCompat="@android:drawable/ic_menu_search"
-            android:id="@+id/search_glass_district"
-            android:outlineSpotShadowColor="@color/white"
+            android:layout_below="@+id/state_spinner"
+            android:popupBackground="@color/transparent_white"
+            android:backgroundTint="@color/transparent_white"
             />
 
-        <TextView
-            android:id="@+id/district_text"
+        <Button
+            android:id="@+id/search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:text="District"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-    </androidx.cardview.widget.CardView>
+            android:layout_below="@id/district_spinner"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/white"
+            android:text="search"
+            android:textColor="@color/teal_700"
+            android:layout_alignParentRight="true"/>
 
-    <Spinner
-        android:id="@+id/district_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/district_search_card"
-        android:layout_marginTop="54dp"
-        android:popupBackground="@color/transparent_white"
-        android:backgroundTint="@color/transparent_white"
-        />
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/show_data_list"
+            android:layout_below="@+id/search"
+            android:padding="5dp"
+            android:dividerHeight="13dp"
+            />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/search_district"
-        android:layout_marginTop="70dp"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/white"
-        android:text="search"
-        android:textColor="@color/teal_700"
-        android:layout_below="@id/district_spinner"
-        />
+        <ProgressBar
+            android:id="@+id/search_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/show_data_list"
+            android:visibility="invisible" />
 
 
 </RelativeLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Single item of list view-->
+
+<androidx.cardview.widget.CardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Help_description_heading"
+            android:text="Help description :"
+            android:padding="5dp"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_below="@+id/Help_description_heading"
+            android:id="@+id/help_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Hello World"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/address_help"
+            android:layout_below="@+id/help_description"
+            android:text="Address where help is required :"
+            android:textSize="23dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/address_"
+            android:layout_below="@+id/address_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Hello World"
+            android:layout_marginTop="5dp"
+            android:textSize="19dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/email_help"
+            android:layout_below="@+id/address_"
+            android:text="Email to help :"
+            android:textSize="23dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/email_"
+            android:layout_below="@id/email_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Hello World"
+            android:layout_marginTop="5dp"
+            android:textSize="19dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/contact_help"
+            android:layout_below="@+id/email_"
+            android:text="Contact to help :"
+            android:textSize="23dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/mobileNumber"
+            android:layout_below="@id/contact_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Hello World"
+            android:layout_marginTop="5dp"
+            android:textSize="19dp"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
