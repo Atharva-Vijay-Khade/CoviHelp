@@ -11,7 +11,7 @@ and the adverse effects of the pandemic.
 
 
 
-Working Flow and App Features
+App Features
 
 > The app will first verify the user with a login/signUp
 
