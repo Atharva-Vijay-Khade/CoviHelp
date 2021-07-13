@@ -88,6 +88,17 @@
 
         </androidx.cardview.widget.CardView>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/help_needy_card"
+            android:text="Your Posts"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black_transparent"
+            android:layout_marginTop="50dp"
+            android:id="@+id/yourPostButton"
+            />
+
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

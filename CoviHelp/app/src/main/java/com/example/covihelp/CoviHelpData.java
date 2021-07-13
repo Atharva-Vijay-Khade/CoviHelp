@@ -2,6 +2,7 @@ package com.example.covihelp;
 
 public class CoviHelpData {
 
+    private String Adder;
     private String HelpDescription;
     private String Address;
     private String Email;
@@ -10,11 +11,20 @@ public class CoviHelpData {
     public CoviHelpData() {
     }
 
-    public CoviHelpData(String helpDescription, String address, String email, String contact) {
+    public CoviHelpData(String helpDescription, String address, String email, String contact,String adder) {
+        Adder = adder;
         HelpDescription = helpDescription;
         Address = address;
         Email = email;
         Contact = contact;
+    }
+
+    public String getAdder() {
+        return Adder;
+    }
+
+    public void setAdder(String adder) {
+        Adder = adder;
     }
 
     public String getHelpDescription() {

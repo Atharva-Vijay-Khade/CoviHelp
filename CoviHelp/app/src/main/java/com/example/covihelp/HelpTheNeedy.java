@@ -8,25 +8,31 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+// Base adapter is used to work with custom adapter which will support cardViews
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+// spinner is used to create dropdown lists in UI
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
+// FireBase imports to support data fetch feature
+// and error checking and iterating on the firebase data
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
-
+// ArrayList is DataStructure in java
 import java.util.ArrayList;
 
-// class implementation
+
+//_________________________________________________________________________________________________________________________________________________
+
+
+// Purpose of the class => implement search based on state and city and then display the data to user
+
 public class HelpTheNeedy extends AppCompatActivity {
 
     // setting up state and district spinner objects
@@ -61,8 +67,7 @@ public class HelpTheNeedy extends AppCompatActivity {
         state_adapter = state_adapter.createFromResource(this,R.array.array_indian_states,R.layout.state_spinner_layout);
 
         // now specifying the layout of the list when it appears
-        state_adapter.setDropDownViewResource(android.R.layout.simple_selectable_list_item
-        );
+        state_adapter.setDropDownViewResource(android.R.layout.simple_selectable_list_item);
 
         // now populating the data from the adapter to the spinner
         state_spinner.setAdapter(state_adapter);
@@ -217,7 +222,10 @@ public class HelpTheNeedy extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                // setting the progress bar as visible
                 progressBar.setVisibility(View.VISIBLE);
+
+                // arraylist to store the dataBase data of current state and district
                 ArrayList<CoviHelpData> coviHelpData = new ArrayList<>();
 
                 String state_string;
@@ -240,7 +248,7 @@ public class HelpTheNeedy extends AppCompatActivity {
                     return;
                 }
 
-                // implementing custom adapter
+                // implementing custom adapter { custom adapter is used to support CardViews }
                 class MyAdapter extends BaseAdapter {
 
                     @Override
@@ -259,9 +267,11 @@ public class HelpTheNeedy extends AppCompatActivity {
                         return 0;
                     }
 
+                    // ViewGroups are descendants of Views which provides a layout outside the View UI components
                     @Override
                     public View getView(int position, View view, ViewGroup viewGroup) {
 
+                        // getLayoutInflater instantiates the xml UI component from the xml into it's view object
                         view = getLayoutInflater().inflate(R.layout.help_the_needy_data_list_item,viewGroup,false);
 
                         TextView helpDescription = view.findViewById(R.id.help_description);
@@ -275,6 +285,7 @@ public class HelpTheNeedy extends AppCompatActivity {
                         mobileNumber.setText(coviHelpData.get(position).getContact().toString());
 
                         return view;
+
                     }
 
                 }
@@ -285,10 +296,12 @@ public class HelpTheNeedy extends AppCompatActivity {
                 // now we are getting the data fom the data base
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("CoviHelp").child(state_string).child(district_string);
 
-
+                // we use addValueEventListener to read data and listen for changes
                 reference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        // snapshot represent the current CoviHelpData copy in the dataBase for the selected state and city
                         coviHelpData.clear();
                         for(DataSnapshot snapshot1 : snapshot.getChildren()) {
                                 CoviHelpData data = new CoviHelpData();
@@ -299,7 +312,9 @@ public class HelpTheNeedy extends AppCompatActivity {
                             Toast.makeText(HelpTheNeedy.this, "No Data Available for this location : (", Toast.LENGTH_SHORT).show();
                         }
                         adapter.notifyDataSetChanged();
+                        // setting the progress bar as invisible after as data fetch is completed
                         progressBar.setVisibility(View.INVISIBLE);
+
                     }
 
                     @Override
@@ -308,11 +323,13 @@ public class HelpTheNeedy extends AppCompatActivity {
                         Toast.makeText(HelpTheNeedy.this, "No Data Available : (", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.INVISIBLE);
                     }
+
                 });
 
-
-
             }
+
         });
+
     }
+
 }

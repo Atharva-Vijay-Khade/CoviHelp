@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+// AdaptersViews are used to fill data in drop down lists as given by spinners UI components
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,14 +13,17 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.google.firebase.FirebaseApp;
+// FirebaseDatabase is the used to access the realtime database in firebase
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
-
+// HashMap is the dataStructure in java used to store key:value pair, each key is unique
+// this HashMap object is directly passed in database to store the user information
 import java.util.HashMap;
 
+//_________________________________________________________________________________________________________________________________________________
 
-// class for AddHelpInfo implementation
+// Purpose of the class => take the help data from the user push it into firebase realtime database
+
 public class AddHelpInfo extends AppCompatActivity {
 
     // objects to manage spinners
@@ -30,7 +34,7 @@ public class AddHelpInfo extends AppCompatActivity {
 
     // objects to manage edit texts and get the input information
     private EditText help_description,address,email,contact;
-    private String help_description_string,address_string,email_string,contact_string,state_string,district_string;
+    private String help_description_string,address_string,email_string,contact_string,state_string,district_string,Adder;
     private Button submitButton;
     private ProgressBar progressBar;
 
@@ -269,6 +273,7 @@ public class AddHelpInfo extends AppCompatActivity {
                             helpData.put("Address",address_string);
                             helpData.put("Email",email_string);
                             helpData.put("Contact",contact_string);
+                            helpData.put("Adder", FirebaseAuth.getInstance().getCurrentUser().getEmail().toString());
 
                             // now adding the hashmap into the data base
 

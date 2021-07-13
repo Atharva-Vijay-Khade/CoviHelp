@@ -1,4 +1,4 @@
-package com.example.covihelp;          // com.example.app_name also serves as an APP ID for playstore reference for future version updates
+package com.example.covihelp;          // com.example.app_name also serves as an APP ID for play store reference for future version updates
 
 // import statements
 import androidx.annotation.NonNull;
@@ -15,8 +15,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+//_________________________________________________________________________________________________________________________________________________________
 
-// main login class logic
+
+
+// Purpose of the class => The class will authenticate the user for login and check the email and password are valid or not
+// if valid then it will take the user into the coviHelp system
+
 public class Login extends AppCompatActivity {
 
     // fields used for login
@@ -42,6 +47,8 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.passwordLogin);
         progress_login = findViewById(R.id.progress_login);
         login_button = findViewById(R.id.login_button);
+
+        // setting the progress bar as invisible on the UI
         progress_login.setVisibility(View.GONE);
 
 
@@ -81,6 +88,8 @@ public class Login extends AppCompatActivity {
                 }
 
                 // now verifying the user
+
+                // now since we are in authentication process we will set the progress bar as visible
                 progress_login.setVisibility(View.VISIBLE);
 
                 // authenticating the user
