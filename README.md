@@ -1,7 +1,7 @@
 # CoviHelp
 
-CoviHelp is an Android Application made using Java, it's aim is to help people who are suffering from COVID-19 
-and the adverse effects of the pandemic.
+**CoviHelp is an Android Application made using Java, it's aim is to help people who are suffering from COVID-19 
+and the adverse effects of the pandemic.**
 
 
 
@@ -13,42 +13,40 @@ and the adverse effects of the pandemic.
 
 ## App Features
 
-> The app will first verify the user with a login/signUp
-
-> Then app will provide the user 2 features :
-
-## Features
-
-> The app will first verify the user with a login/signUp 
-
-> Then app will provide the user 2 features : 
+> The app will first verify the user with a **login/signUp**
 
 ### Add Help Info 
 
 > Add help info This feature is useful in the following situations
  
-> Help the Poor 
+> **Help the Poor** 
 
-> Help to Cure COVID 
+> Help to **Cure COVID** 
 
-> Help to get labour or job request 
+> Help to get **labour or job request** 
 
-> Any other help information required by the users or by other people known by the user can be added by using this feature of the app, to help them. 
+> **Any other help information** required by the users or by other people known by the user can be added by using this feature of the app, to help them. 
 
 ### Help the needy 
 
-> Help the needy If the user wants to help someone, the user can select this feature 
+> Help the needy If the **user wants to help someone**, the user can select this feature 
 
-> By using this feature the user will be asked for district where the user wants to help 
+> By using this feature the user will be **asked for district** where the user wants to help 
 
-> then locations with help discription will be shown corrosponding to the district where help is required 
+> then **locations with help discription will be shown** corrosponding to the district where help is required 
 
-> the users then can select where the user wants to help 
+> the users then can **select** where the user wants to help 
 
-> after selecting the app will show information about the help required there and contact information 
+> after selecting the app will show information about the help required there and **contact information** 
 
-> then user can contact that person or the adder of this information to help the needy 
+> then user can contact that person or the adder of this information to **help** the needy 
 
+
+### See Your Posts / Delete Posts
+
+> User will be able to see what **posts the user has added**
+
+> Once the adder of the post konws that the help has been supplied then the adder can **delete the post**
 
 
 ## Screenshots
