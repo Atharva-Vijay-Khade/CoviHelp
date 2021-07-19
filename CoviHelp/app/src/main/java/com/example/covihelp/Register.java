@@ -1,15 +1,23 @@
-package com.example.covihelp;                                     // com.example.app_name also serves as an APP ID for play store reference for future version updates
+package com.example.covihelp;                                     // com.example.app_name is actually the package name and it also serves as an APP ID for play store reference for future version updates
+
 
 // import statements
+
+
 // NonNull is used to implement Null safety, NonNull() will tell that a
-// function can't return a null value which is a null safety measure, else ther will
+// function can't return a null value which is a null safety measure, else there will
 // be runtime errors in applications
 import androidx.annotation.NonNull;
+// AppCompatActivity => it's Base class for activities that wish to use some of the newer platform features on older Android devices -> features
+// like multiple themes and navigation related features etc
 import androidx.appcompat.app.AppCompatActivity;
+// Intent in android => An intent is to perform an action on the screen. It is mostly used to start activity, send message between two activities.
 import android.content.Intent;
+// Android Bundle => Android Bundle is used to pass data between activities.
 import android.os.Bundle;
 // Patterns class in java is android is used to to check common patterns and validate them, such as email patterns etc
 import android.util.Patterns;
+// View in android => Every UI component in android is a descendant of the View class, it's important to make UI components on screen of the application
 import android.view.View;
 // Buttons EditTexts Progress Bars are all UI components which are descendants of the View class used to implement UI on the screen
 import android.widget.Button;
@@ -30,8 +38,8 @@ import com.google.firebase.auth.FirebaseAuth;
 //_______________________________________________________________________________________________________________________________________________________________________
 
 
+// Purpose of this class => Register the user in the CoviHelp system if not already registered
 
-// Purpose of this class => Register the user in the coviHelp system if not already registered
 
 public class Register extends AppCompatActivity {
 
@@ -44,9 +52,29 @@ public class Register extends AppCompatActivity {
 
 
     @Override
+
+    // this is the onCreate function that runs first whenever this activity starts
+    // Similar to JVM to run the java code, in android we have DVM -> Dalvik VM, which takes in the .class
+    // file generated from java compiler and then the Dex compiler {has platform specific tools to compile}
+    // in DVM generates the .dex file which is packaged by
+    // Android Assets packaging tool { aapt } into an .apk file that is platform specific and machine neutrality is achieved
+
+    // The savedInstanceState is a reference to a Bundle object that is passed into
+    // the onCreate method of every Android Activity.
+
     protected void onCreate(Bundle savedInstanceState) {
 
+        // this super.onCreate line tells the DVM to run the onCreate of parent class with the onCreate of
+        // this class, because the parent class onCreate contains many more features which are required to run
+        // the android application, and this creates a layer of abstraction
+
         super.onCreate(savedInstanceState);
+
+        // setContentView is the function that links the UI components with this .java class
+        // UI components are represented in .xml file and decides the complete UI of the screen
+        // this R.layout.activity_login_sign_up means link this .java class with activity_login_sign_up xml component
+        // which is in Resources [R], in layout folder
+
         setContentView(R.layout.activity_register);
 
         // here we are getting the current instance of the firebase data base
@@ -108,6 +136,7 @@ public class Register extends AppCompatActivity {
                     password.setError("Password length should be at least 6 characters");
                     password.requestFocus();
                     return;
+
                 }
 
                 // now since we will authenticate the user we set the progress bar to visible here
@@ -134,8 +163,8 @@ public class Register extends AppCompatActivity {
                 // registering the user in firebase with email and password
                 mAuth.createUserWithEmailAndPassword(email_string,password_string).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {          // NonNull gives a null safety feature, task can't be null, else it gives runtime errors
-
+                    // NonNull gives a null safety feature, task can't be null, else it gives runtime errors
+                    public void onComplete(@NonNull Task<AuthResult> task) {
                         // if the user is created successfully, represented by task.isSuccessful() then
                         // we direct to the main activity
                         if(task.isSuccessful()) {
@@ -146,7 +175,6 @@ public class Register extends AppCompatActivity {
                         else {
                             Toast.makeText(Register.this, "Error: "+task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         }
-
                         // setting the progress bar as invisible on UI here
                         register_progress_bar.setVisibility(View.GONE);
 

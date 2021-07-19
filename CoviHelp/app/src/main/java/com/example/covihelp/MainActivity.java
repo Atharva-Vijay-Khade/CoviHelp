@@ -1,26 +1,24 @@
 package com.example.covihelp;
 
 // import statements
-import androidx.activity.OnBackPressedCallback;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
+// AlertDialog class is used to implement the popup asking the user to confirm the selected choice
+import androidx.appcompat.app.AlertDialog;
+// AppCompatActivity is used to support backward compatibility of our app's new features to run on old phones
+import androidx.appcompat.app.AppCompatActivity;
+// This is used to implement DialogInterface which is a part of the AlertDialog
 import android.content.DialogInterface;
+// Intent is used to navigate between activities
 import android.content.Intent;
+// Bundle is used to pass data between activities
 import android.os.Bundle;
+// each UI element in android is a View
 import android.view.View;
 // buttons and imageViews are UI component classes which are descendants of the View class
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
-// in this activity FirebaseAuth used for signOut
+// This class FirebaseAuth is used for authentication of user, login, sign up, logout etc
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 //_____________________________________________________________________________________________________________________________________________________________________
@@ -55,19 +53,22 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         // this is the first function which runs when activity is started
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
+
 
         // binding the objects with there views so that we can preform tasks on them
         addHelpInfo = findViewById(R.id.AddHelpButton);
         helpTheNeedy = findViewById(R.id.HelpAnyOneButton);
         logout = findViewById(R.id.logout);
         yourPostsButton = findViewById(R.id.yourPostButton);
-
 
 
         // setting up logout action, when user hits on the logout button

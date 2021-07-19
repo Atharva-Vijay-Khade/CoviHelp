@@ -1,4 +1,5 @@
 package com.example.covihelp;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,8 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
+
 
 public class YourPosts extends AppCompatActivity {
 
@@ -30,17 +31,18 @@ public class YourPosts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_your_posts);
 
         yourPostList = findViewById(R.id.yourPostList);
         currentUserEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail().toString();
         progressBar = findViewById(R.id.yourPost_progress);
+
         ArrayList<CoviHelpData> coviHelpData = new ArrayList<>();
 
         progressBar.setVisibility(View.VISIBLE);
 
         class MyNoDataAdapter extends BaseAdapter {
-
             @Override
             public int getCount() {
                 return 1;

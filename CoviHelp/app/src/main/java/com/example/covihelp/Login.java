@@ -15,12 +15,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+
 //_________________________________________________________________________________________________________________________________________________________
 
 
-
 // Purpose of the class => The class will authenticate the user for login and check the email and password are valid or not
-// if valid then it will take the user into the coviHelp system
+// if valid then it will take the user into the CoviHelp system
 
 public class Login extends AppCompatActivity {
 
@@ -37,6 +37,7 @@ public class Login extends AppCompatActivity {
         // whenever this activity/screen will start then
         // this onCreate(); function is started
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
 
         // here we are getting the current instance of the firebase data base

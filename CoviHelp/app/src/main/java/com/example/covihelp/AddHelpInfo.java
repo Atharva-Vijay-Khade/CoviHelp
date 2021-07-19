@@ -1,6 +1,7 @@
-package com.example.covihelp;         // this is important to give unique id for the app on playstore
+package com.example.covihelp;
 
 // import statements
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -20,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 // this HashMap object is directly passed in database to store the user information
 import java.util.HashMap;
 
+
 //_________________________________________________________________________________________________________________________________________________
 
 // Purpose of the class => take the help data from the user push it into firebase realtime database
@@ -29,6 +31,7 @@ public class AddHelpInfo extends AppCompatActivity {
     // objects to manage spinners
     private Spinner state_spinner;
     private Spinner district_spinner;
+
     private ArrayAdapter state_adapter;
     private ArrayAdapter district_adapter;
 
@@ -43,6 +46,7 @@ public class AddHelpInfo extends AppCompatActivity {
 
         // this is the method that starts at first when the screen is loaded
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_add_help_info);
 
         // binding the field objects with their UI components
@@ -304,9 +308,6 @@ public class AddHelpInfo extends AppCompatActivity {
 
         });
 
-
-
     }
-
 
 }

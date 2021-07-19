@@ -1,6 +1,7 @@
 package com.example.covihelp;                          // com.example.app_name gives unique id to our application when it's on playstore
 
 // import statements
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -71,6 +72,7 @@ public class HelpTheNeedy extends AppCompatActivity {
 
         // now populating the data from the adapter to the spinner
         state_spinner.setAdapter(state_adapter);
+
 
         // now on the basis of the selected state we should select the district
         // and populate the data on the district spinner
@@ -311,6 +313,7 @@ public class HelpTheNeedy extends AppCompatActivity {
                         if(coviHelpData.size()==0) {
                             Toast.makeText(HelpTheNeedy.this, "No Data Available for this location : (", Toast.LENGTH_SHORT).show();
                         }
+
                         adapter.notifyDataSetChanged();
                         // setting the progress bar as invisible after as data fetch is completed
                         progressBar.setVisibility(View.INVISIBLE);
@@ -322,6 +325,7 @@ public class HelpTheNeedy extends AppCompatActivity {
 
                         Toast.makeText(HelpTheNeedy.this, "No Data Available : (", Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.INVISIBLE);
+
                     }
 
                 });
